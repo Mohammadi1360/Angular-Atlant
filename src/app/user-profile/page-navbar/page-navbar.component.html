@@ -1,0 +1,29 @@
+<!-- TOGGLE NAVIGATION -->
+<li class="xn-icon-button">
+  <a class="x-navigation-minimize pointer"><span class="fa fa-indent"></span></a>
+</li>
+<!-- END TOGGLE NAVIGATION -->
+<!-- SEARCH -->
+<li class="xn-search" app-user-search>
+</li>
+<!-- END SEARCH -->
+<!-- SIGN OUT -->
+<li class="xn-icon-button pull-left">
+  <a (click)="onExitClick()" class="mb-control" style="cursor: pointer"><span class="fa fa-power-off"></span></a>
+
+  <app-exit-message></app-exit-message>
+
+</li>
+<!-- END SIGN OUT -->
+
+<!-- MESSAGES -->
+<li class="xn-icon-button pull-left" app-user-messages>
+
+</li>
+<!-- END MESSAGES -->
+
+<!-- TASKS -->
+<li class="xn-icon-button pull-left" app-user-tasks>
+</li>
+<!-- END TASKS -->
+

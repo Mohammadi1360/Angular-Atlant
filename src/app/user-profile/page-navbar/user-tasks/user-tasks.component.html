@@ -1,0 +1,36 @@
+<a (click)="activeTasks()" class="pointer"><span class="fa fa-tasks"></span></a>
+<div class="informer informer-warning">{{userTasks.length}}</div>
+<div class="panel panel-primary animated zoomIn xn-drop-right xn-panel-dragging">
+  <div class="panel-heading">
+    <h3 class="panel-title pull-right"><span class="fa fa-tasks"></span> {{ 'Tasks' | translate }} </h3>
+    <div class="pull-left">
+      <span class="label label-warning">
+        {{userTasks.length}} {{ 'Active' | translate }}
+      </span>
+    </div>
+  </div>
+  <div class="panel-body list-group scroll" style="height: 230px;">
+
+    <a *ngFor="let task of userTasks.slice(0,3)" (click)="rowClicked(task.id)"
+       class="list-group-item pointer">
+      <strong>{{task.taskTitle}}</strong>
+      <div class="progress progress-small progress-striped active">
+        <div class="progress-bar progress-bar-danger"
+             [ngStyle]="{width : getProgress(task.id)}"
+             role="progressbar"
+             aria-valuenow="0"
+             aria-valuemin="0"
+             aria-valuemax="100"> {{ task.progress +'%'}}
+
+        </div>
+      </div>
+      <small class="text-muted"> {{task.assigneeUser + ' , ' + task.taskDueDate+ ' - ' + task.progress + '%'}}</small>
+      <small *ngIf="task.progress === 100" class="text-success"> Done</small>
+    </a>
+
+  </div>
+  <div class="panel-footer text-center pointer">
+    <a (click)="footerClicked()"> {{ 'Show all tasks' | translate }} </a>
+  </div>
+</div>
+

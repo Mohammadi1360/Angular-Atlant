@@ -1,0 +1,91 @@
+<div class="col-md-12">
+  <form class="form-horizontal">
+    <div class="panel panel-default tabs">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">{{'Task Details' | translate}}</a></li>
+        <li><a href="#tab-second" role="tab" data-toggle="tab">{{'Task Comments' | translate}}</a></li>
+        <li><a href="#tab-third" role="tab" data-toggle="tab">{{'Task History' | translate}}</a></li>
+      </ul>
+      <div class="panel-body tab-content">
+        <div class="tab-pane active" id="tab-first">
+
+          <p> {{userTaskDetails.description}} </p>
+
+          <div class="form-group">
+            <label class="col-md-3 col-xs-12 control-label">First Name</label>
+            <div class="col-md-6 col-xs-12">
+              <input type="text" class="form-control" value="John"/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 col-xs-12 control-label">Second Name</label>
+            <div class="col-md-6 col-xs-12">
+              <input type="text" class="form-control" value="Doe"/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 col-xs-12 control-label">Date of birth</label>
+            <div class="col-md-2">
+              <select class="form-control select">
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+                <option selected="selected">04</option>
+                <option>05</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <select class="form-control select">
+                <option>01</option>
+                <option selected="selected">02</option>
+                <option>03</option>
+                <option>04</option>
+                <option>05</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <select class="form-control select">
+                <option>1985</option>
+                <option>1986</option>
+                <option>1987</option>
+                <option>1988</option>
+                <option selected="selected">1989</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 col-xs-12 control-label">About</label>
+            <div class="col-md-6 col-xs-12">
+              <textarea class="form-control" rows="5">Morbi tellus nulla, cursus non nisi sed, porttitor dignissim erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc facilisis commodo lectus. Vivamus vel tincidunt enim, non vulputate ipsum. Ut pellentesque consectetur arcu sit amet scelerisque. Fusce commodo leo eros, ut eleifend massa congue at.</textarea>
+              <span class="help-block">Somethink about your life</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 col-xs-12 control-label">E-mail</label>
+            <div class="col-md-6 col-xs-12">
+              <label class="check"><input type="checkbox" class="icheckbox" checked="checked"/> I want to get
+                emails</label>
+              <span class="help-block">If you wish of course</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="tab-pane" id="tab-second">
+
+        </div>
+        <div class="tab-pane" id="tab-third">
+
+        </div>
+      </div>
+      <div class="panel-footer">
+        <button (click)="callService()" class="btn btn-primary pull-right">{{'Save Changes' | translate}}
+          <span class="fa fa-floppy-o fa-right"></span></button>
+      </div>
+    </div>
+  </form>
+
+</div>

@@ -1,0 +1,67 @@
+<div class="login-container login-bg">
+
+  <div class="login-box animated fadeInDown">
+    <div class="login-logo"></div>
+    <div class="login-body">
+      <div class="login-title"><strong> {{ 'Welcome' | translate }} </strong>, {{ 'Please Login' | translate }}</div>
+      <form class="form-horizontal" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <div class="form-group">
+          <div class="col-md-12">
+            <input type="text"
+                   class="form-control"
+                   placeholder="{{ 'UserName' | translate }}"
+                   [(ngModel)]="user.userName"
+                   required
+                   #userName="ngModel"
+                   name="userName"/>
+            <span class="help-block" *ngIf="!userName.valid && userName.touched">
+              {{ 'Please Enter UserName !' | translate }}
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+            <input type="password"
+                   class="form-control"
+                   placeholder="{{ 'Password' | translate }}"
+                   [(ngModel)]="user.password"
+                   required
+                   #password="ngModel"
+                   name="password"/>
+            <span class="help-block" *ngIf="!password.valid && password.touched">
+              {{ 'Please Enter Password !' | translate }}
+            </span>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6">
+            <a href="#" class="btn btn-link btn-block">{{ 'Forgot your password ?' | translate }}</a>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-info btn-block"
+                    type="submit"
+                    [disabled]="!loginForm.valid"> {{ 'Log In' | translate }}
+
+            </button>
+          </div>
+        </div>
+        <span class="help-block" *ngIf="loginError">
+              {{ 'UserName Or Password Is Incorrect !!' | translate }}
+        </span>
+
+      </form>
+    </div>
+    <div class="login-footer">
+      <div class="pull-left">
+        &copy; {{ 'Behsazan Mellat 2017' | translate }}
+      </div>
+      <div class="pull-right">
+        <a href="#">{{ 'About' | translate }}</a> |
+        <a href="#">{{ 'Privacy' | translate }}</a> |
+        <a href="#">{{ 'Contact Us' | translate }}</a>
+      </div>
+    </div>
+  </div>
+
+</div>
