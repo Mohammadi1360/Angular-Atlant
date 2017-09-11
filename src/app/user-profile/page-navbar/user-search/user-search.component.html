@@ -1,8 +1,0 @@
-<form role="form">
-  <input type="text"
-         name="searchBox"
-         #searchBox
-         placeholder="{{ 'SearchBar' | translate }}"
-         [(ngModel)]="actionNumber" (keypress)="$event.which === 13 ? goUserAction() : 0" (input)="onSearchKeyDown()"/>
-
-</form>
