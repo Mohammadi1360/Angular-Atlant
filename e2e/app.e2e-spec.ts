@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('tashilat-app App', () => {
+describe('angular-atlant-app App', () => {
   let page: AppPage;
 
   beforeEach(() => {
