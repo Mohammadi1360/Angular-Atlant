@@ -1,0 +1,9 @@
+.login-bg {
+  background-image: url("../../assets/img/backgrounds/bg.jpg");
+
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red !important;;
+}
+

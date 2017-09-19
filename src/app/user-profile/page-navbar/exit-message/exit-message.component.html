@@ -1,0 +1,27 @@
+<!-- MESSAGE BOX-->
+<div class="message-box animated fadeIn" data-sound="alert" #maindiv>
+  <div class="mb-container">
+    <div class="mb-middle">
+      <div class="mb-title"><span class="fa fa-power-off"></span> <strong>{{ 'Log Out ?' | translate }}</strong></div>
+      <div class="mb-content">
+        <h2>{{ 'Are you sure you want to log out ?' | translate }}</h2>
+        <h3>{{ 'Press No if you want to continue work. Press Yes to logout current user !' | translate }}</h3>
+      </div>
+      <div class="mb-footer">
+        <div [class.pull-left]="isRtlMode()" [class.pull-right]="!isRtlMode()">
+          <a (click)="btnYesClicked()"
+             class="btn btn-success btn-lg">
+            {{ 'Yes' | translate }}
+
+          </a>
+
+          <button (click)="btnNoClicked()" class="btn btn-default btn-lg mb-control-close">
+            {{ 'No' | translate }}
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END MESSAGE BOX-->

@@ -1,0 +1,154 @@
+<!-- START CONTENT FRAME -->
+<div class="content-frame">
+  <!-- START CONTENT FRAME TOP -->
+  <div class="content-frame-top">
+    <div class="page-title pull-right">
+      <h2> {{'Tasks Title' | translate}} <span class="fa fa-arrow-circle-o-left"></span></h2>
+    </div>
+    <div class="pull-left">
+      <button class="btn btn-default content-frame-left-toggle"><span class="fa fa-bars"></span></button>
+    </div>
+    <div class="pull-left" style="width: 100px; margin-right: 5px;">
+      <select title="." class="form-control select">
+        <option>{{'All' | translate}}</option>
+        <option>{{'Work' | translate}}</option>
+        <option>{{'Home' | translate}}</option>
+        <option>{{'Friends' | translate}}</option>
+        <option>{{'Closed' | translate}}</option>
+      </select>
+    </div>
+
+  </div>
+  <div class="content-frame-right">
+    <div class="form-group">
+      <h4>{{'Add new task:' | translate}}</h4>
+      <textarea class="form-control push-down-10" id="new_task" rows="4"
+                placeholder="{{'Your task text here...' | translate}}"></textarea>
+      <button class="btn btn-primary" id="add_new_task">{{'AddTask' | translate}} <span
+        class="fa fa-edit"></span>
+      </button>
+    </div>
+    <div class="form-group push-up-10">
+      <h4>{{'Searh in tasks:' | translate}}</h4>
+      <div class="input-group">
+        <div class="input-group-addon"><span class="fa fa-search"></span></div>
+        <input type="text" class="form-control" placeholder="{{'keyword...' | translate}}"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <h4>{{'Task groups:' | translate}}</h4>
+      <div class="list-group border-bottom">
+        <a href="#" class="list-group-item">
+          <span class="fa fa-circle text-primary"></span> {{'Project #1' | translate}}
+        </a>
+
+        <a href="#" class="list-group-item">
+          <span class="fa fa-circle text-success"></span> {{'Project #2' | translate}}
+        </a>
+
+        <a href="#" class="list-group-item">
+          <span class="fa fa-circle text-warning"></span> {{'Project #3' | translate}}
+        </a>
+
+      </div>
+    </div>
+    <div class="form-group">
+      <h4>{{'Tags:' | translate}}</h4>
+      <ul class="list-tags">
+        <li><a href="#"><span class="fa fa-tag"></span> Task</a></li>
+        <li><a href="#"><span class="fa fa-tag"></span> Progress</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <!-- END CONTENT FRAME TOP -->
+
+  <!-- START CONTENT FRAME BODY -->
+  <div class="content-frame-body">
+
+    <div class="row push-up-10">
+      <div class="col-md-4">
+        <h3>{{'To-do List' | translate}}</h3>
+        <div class="tasks" id="tasks">
+          <div *ngFor="let task of getToDoTasks()"
+               class="task-item task-success"
+               (click)="showTaskById(task.id)">
+
+            <div class="task-text">
+              {{task.taskTitle}}
+            </div>
+            <div class="task-footer">
+              <div class="pull-left"><span class="fa fa-clock-o"></span> 1{{'h' | translate}} ,45 {{'min' | translate}}
+              </div>
+              <div class="pull-right">
+                <a href="#">
+                  <span class="fa fa-chain"></span>
+                </a>
+                <a href="#">
+                  <span class="fa fa-comments"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <h3>{{'In Progress' | translate}}</h3>
+        <div class="tasks" id="tasks_progreess">
+
+          <div *ngFor="let task of getInProgressTasks()"
+               class="task-item task-warning"
+               (click)="showTaskById(task.id)">
+
+            <div class="task-text">
+              {{task.taskTitle}}
+            </div>
+            <div class="task-footer">
+              <div class="pull-left"><span class="fa fa-clock-o">
+              </span> 2{{'h' | translate}} ,55 {{'min' | translate}}
+              </div>
+              <div class="pull-right"><span class="fa fa-pause"></span> 4:51</div>
+            </div>
+          </div>
+
+          <div class="task-drop push-down-10">
+            <span class="fa fa-cloud"></span>
+            {{'Drag your task here to start it tracking time' | translate}}
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <h3>{{'Completed' | translate}}</h3>
+        <div class="tasks" id="tasks_completed">
+
+          <div *ngFor="let task of getCompletedTasks()"
+               class="task-item task-danger task-complete"
+               (click)="showTaskById(task.id)">
+
+            <div class="task-text">
+              {{task.taskTitle}}
+            </div>
+            <div class="task-footer">
+              <div class="pull-left">
+                <span class="fa fa-clock-o"></span> 15 {{'min' | translate}}
+              </div>
+            </div>
+          </div>
+
+          <div class="task-drop">
+            <span class="fa fa-cloud"></span>
+            {{'Drag your task here to finish it' | translate}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- END CONTENT FRAME BODY -->
+
+</div>
+<!-- END CONTENT FRAME -->

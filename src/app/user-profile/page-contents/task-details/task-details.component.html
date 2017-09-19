@@ -1,0 +1,49 @@
+<div class="col-md-12">
+  <form class="form-horizontal">
+    <div class="panel panel-default tabs">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">{{'Task Details' | translate}}</a></li>
+        <li><a href="#tab-second" role="tab" data-toggle="tab">{{'Task Comments' | translate}}</a></li>
+        <li><a href="#tab-third" role="tab" data-toggle="tab">{{'Task History' | translate}}</a></li>
+      </ul>
+      <div class="panel-body tab-content">
+        <div class="tab-pane active" id="tab-first">
+
+          <div class="form-group">
+            <label class="col-md-3 col-xs-12 control-label">Description</label>
+            <div class="col-md-6 col-xs-12">
+              <label> {{userTaskDetails.taskTitle}} </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 col-xs-12 control-label">TaskDueDate</label>
+            <div class="col-md-6 col-xs-12">
+              <label> {{userTaskDetails.taskDueDate}} </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 col-xs-12 control-label">TaskPriority</label>
+            <div class="col-md-6 col-xs-12">
+              <label> {{userTaskDetails.taskPriority}} </label>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="tab-pane" id="tab-second">
+
+        </div>
+        <div class="tab-pane" id="tab-third">
+
+        </div>
+      </div>
+      <div class="panel-footer">
+        <button class="btn btn-primary pull-right">{{'Save Changes' | translate}}
+          <span class="fa fa-floppy-o fa-right"></span></button>
+      </div>
+    </div>
+  </form>
+
+</div>
