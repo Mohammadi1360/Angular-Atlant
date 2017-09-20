@@ -37,7 +37,7 @@
       <li *ngFor="let menu2 of getMenuListByPid(menu1.id)"
           [ngClass]="{'xn-openable' : menuHasChild(menu2.id)}">
 
-        <a *ngIf="menu2 != null" class="pointer">
+        <a *ngIf="menu2 != null" class="pointer" (click)="callMenu(menu2.id)">
           <span class="fa {{menu2.icon}}"></span>
           {{menu2.title + '(' + menu2.id + ')'}}
         </a>
@@ -45,7 +45,7 @@
         <ul *ngIf="menu2 != null">
           <li *ngFor="let menu3 of getMenuListByPid(menu2.id)"
               [ngClass]="{'xn-openable' : menuHasChild(menu3.id)}">
-            <a *ngIf="menu3 != null" class="pointer">
+            <a *ngIf="menu3 != null" class="pointer" (click)="callMenu(menu3.id)">
               <span class="fa {{menu3.icon}}"></span>
               {{menu3.title + '(' + menu3.id + ')'}}
             </a>
@@ -53,7 +53,7 @@
             <ul *ngIf="menu3 != null">
               <li *ngFor="let menu4 of getMenuListByPid(menu3.id)"
                   [ngClass]="{'xn-openable' : menuHasChild(menu4.id)}">
-                <a *ngIf="menu4 != null" class="pointer">
+                <a *ngIf="menu4 != null" class="pointer" (click)="callMenu(menu4.id)">
                   <span class="fa {{menu4.icon}}"></span>
                   {{menu4.title + '(' + menu4.id + ')'}}
                 </a>
@@ -61,7 +61,7 @@
                 <ul *ngIf="menu4 != null">
                   <li *ngFor="let menu5 of getMenuListByPid(menu4.id)"
                       [ngClass]="{'xn-openable' : menuHasChild(menu5.id)}">
-                    <a *ngIf="menu5 != null" class="pointer">
+                    <a *ngIf="menu5 != null" class="pointer" (click)="callMenu(menu5.id)">
                       <span class="fa {{menu5.icon}}"></span>
                       {{menu5.title + '(' + menu5.id + ')'}}
                     </a>

@@ -1,7 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MenuService} from '../../../shared/services/menu.service';
-import {PageMode} from '../../../shared/enum/page-mode.enum';
 
 @Component({
   selector: '[app-user-search]',
@@ -33,39 +32,11 @@ export class UserSearchComponent implements OnInit {
   }
 
   goUserAction() {
-    // if (keyEvent.which === 13) {
-    // this.searchBox.nativeElement.select();
-
-    switch (this.actionNumber) {
-      case '4131': {
-        // this.router.navigate(['/userProfile/customerCartable']);
-        this.router.navigate(['/userProfile/customerCartable']);
-        break;
-      }
-      case '4132': {
-        this.router.navigate(['/userProfile/customerRegistration'], {
-          queryParams: {pageMode: PageMode.SEARCH}
-        });
-        break;
-      }
-      case '4133': {
-        this.router.navigate(['/userProfile/taskList']);
-        break;
-      }
-      case '4134': {
-        this.router.navigate(['/userProfile/taskDetails']);
-        break;
-      }
-      case '': {
-        this.router.navigate(['/userProfile']);
-        break;
-      }
-      default: {
-        this.router.navigate(['not-found'], {relativeTo: this.route});
-        break;
-      }
+    let menuId = 0;
+    if (this.actionNumber !== '') {
+      menuId = +this.actionNumber;
     }
-    // }
+    this.menuService.doRoutePath(menuId, this.router);
   }
 
   focusAndSelect() {

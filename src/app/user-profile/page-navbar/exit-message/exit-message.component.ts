@@ -26,7 +26,7 @@ export class ExitMessageComponent extends BaseComponent implements OnInit {
 
   btnYesClicked() {
     this.authService.logout();
-    window.location.href = './loginPage';
+    window.location.href = './';
     // this.router.navigate(['/']);
   }
 

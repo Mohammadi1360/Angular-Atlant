@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MenuService} from '../../shared/services/menu.service';
 import {Subscription} from 'rxjs/Subscription';
 import {Menu} from '../../shared/model/menu.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: '[app-page-sidebar]',
@@ -13,7 +14,7 @@ export class PageSidebarComponent implements OnInit, OnDestroy {
   passedMenuNumber = 0;
 
 
-  constructor(private menuService: MenuService) {
+  constructor(private menuService: MenuService, private router: Router) {
   }
 
   ngOnInit() {
@@ -23,6 +24,10 @@ export class PageSidebarComponent implements OnInit, OnDestroy {
       }
     );
 
+  }
+
+  callMenu(menuId: number) {
+    this.menuService.doRoutePath(menuId, this.router);
   }
 
   ngOnDestroy(): void {
