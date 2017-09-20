@@ -15,7 +15,7 @@ const appRoutes: Routes = [
   {path: 'loginPage', component: LoginPageComponent},
   {
     path: 'userProfile',
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     // canActivateChild: [AuthGuard],
     component: UserProfileComponent,
     children: [

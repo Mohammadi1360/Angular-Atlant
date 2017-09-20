@@ -25,14 +25,29 @@ export class BaseComponent {
 
   selectLang(lang: string) {
     if (!this.isCurrentLang(lang)) {
-      this._baseService.use(lang);
-      if (this.isRtlMode()) {
-        document.getElementById('theme').setAttribute('href', 'assets/css/theme-default_rtl.css');
-      } else {
-        document.getElementById('theme').setAttribute('href', 'assets/css/theme-default.css');
-      }
+      this._baseService.useWithSetCookie(lang);
+      this.changeDirection();
     }
   }
+
+  setAppLang() {
+    const lang = this._baseService.currentLangCookie;
+    if (lang === '') {
+      this.selectLang('en');
+    } else {
+      this._baseService.use(lang);
+      this.changeDirection();
+    }
+  }
+
+  changeDirection() {
+    if (this.isRtlMode()) {
+      document.getElementById('theme').setAttribute('href', 'assets/css/theme-default_rtl.css');
+    } else {
+      document.getElementById('theme').setAttribute('href', 'assets/css/theme-default.css');
+    }
+  }
+
 }
 
 

@@ -27,6 +27,8 @@ import {TaskDetailsComponent} from './user-profile/page-contents/task-details/ta
 import {BaseComponent} from './user-profile/base.component';
 import {BaseService} from './shared/services/base.service';
 import {TranslateService} from './translate/translate.service';
+import {CookieModule, CookieService} from 'ngx-cookie';
+import {CookieOptionsProvider} from 'ngx-cookie/src/cookie-options-provider';
 
 
 @NgModule({
@@ -53,13 +55,16 @@ import {TranslateService} from './translate/translate.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule ,
+    CookieModule.forRoot()
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     UserService,
     TRANSLATION_PROVIDERS,
     TranslateService,
+    CookieService,
+    CookieOptionsProvider,
     BaseService,
     AuthService,
     AuthGuard,

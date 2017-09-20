@@ -6,6 +6,7 @@ import {NgForm} from '@angular/forms';
 import {AuthService} from '../auth.service';
 import {BaseComponent} from '../user-profile/base.component';
 import {BaseService} from '../shared/services/base.service';
+import {CookieService} from 'ngx-cookie';
 
 
 @Component({
@@ -29,6 +30,7 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
 
   ngOnInit() {
     this.renderer.setAttribute(document.getElementsByTagName('html').item(0), 'class', 'body-full-height');
+
   }
 
   onSubmit() {
@@ -43,4 +45,5 @@ export class LoginPageComponent extends BaseComponent implements OnInit {
       this.router.navigate(['/']);
     }
   }
+
 }

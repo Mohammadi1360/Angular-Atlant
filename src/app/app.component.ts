@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {BaseService} from './shared/services/base.service';
+import {BaseComponent} from './user-profile/base.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent extends BaseComponent implements OnInit {
   public supportedLanguages: any[];
 
   ngOnInit(): void {
@@ -15,10 +16,10 @@ export class AppComponent implements OnInit {
       {display: 'Farsi', value: 'fa'}
     ];
 
-    this.baseService.use('fa');
+    this.setAppLang();
   }
 
-
   constructor(private baseService: BaseService) {
+    super(baseService);
   }
 }
