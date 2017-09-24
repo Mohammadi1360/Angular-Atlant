@@ -55,7 +55,7 @@ import {CookieOptionsProvider} from 'ngx-cookie/src/cookie-options-provider';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule ,
+    AppRoutingModule,
     CookieModule.forRoot()
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

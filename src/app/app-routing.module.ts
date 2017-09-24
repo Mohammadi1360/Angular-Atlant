@@ -15,7 +15,7 @@ const appRoutes: Routes = [
   {path: 'loginPage', component: LoginPageComponent},
   {
     path: 'userProfile',
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     // canActivateChild: [AuthGuard],
     component: UserProfileComponent,
     children: [
@@ -33,6 +33,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
+    // RouterModule.forRoot(appRoutes , {useHash : true}) // For Filesystem Run ...
     RouterModule.forRoot(appRoutes)
   ],
   exports: [RouterModule]

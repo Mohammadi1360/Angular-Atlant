@@ -877,7 +877,6 @@ body.page-container-boxed .page-container {
 }
 .x-navigation .x-navigation-control {
   position: absolute;
-  right: 0px;
   width: 50px;
   height: 50px;
   cursor: pointer;
