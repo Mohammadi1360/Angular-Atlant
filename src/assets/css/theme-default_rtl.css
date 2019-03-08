@@ -44,6 +44,7 @@
 html * {
   outline: none !important;
 }
+
 html,
 body {
   min-height: 100%;
