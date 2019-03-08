@@ -16,6 +16,11 @@
 @import "animate/animate.min.css";
 
 /* PREDEFINED CLASSES */
+@font-face {
+  font-family: Yekan;
+  src: url(fonts/farsi/yekan/Yekan.ttf) format("truetype");
+}
+
 .clearfix {
   zoom: 1;
 }
@@ -46,7 +51,7 @@ body {
   margin: 0px;
   background: #f5f5f5 url('../img/bg.png') left top repeat;
   position: relative;
-  font-family: 'B Koodak', sans-serif;
+  font-family: 'Yekan', sans-serif;
   font-size: 14px;
   color: #656d78;
   overflow-x: hidden;
